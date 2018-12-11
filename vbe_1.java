@@ -81,18 +81,19 @@ public class vbe_1 {
 		    String paddedString = sb.toString();
 		    computedBinary = paddedString;  
 		}
-		System.out.println(">>>>"+computedBinary);
+		//System.out.println(">>>>"+computedBinary);
 		if(flag_orig_byte==1) {
 			System.out.println(computedBinary);	
 		}
 		else if(flag_orig_byte==2) {
 			computedBinary = computedBinary.substring(0, 9) + "1" + computedBinary.substring(9, computedBinary.length());
-			System.out.println(computedBinary.substring(1));	
+			System.out.println(">>"+computedBinary.substring(1));
+			originalInBitSet = fromString(computedBinary.substring(2));
 		}
 		else if(flag_orig_byte==3) {
 			computedBinary = computedBinary.substring(0, 10) + "0" + computedBinary.substring(10, computedBinary.length());
 			computedBinary = computedBinary.substring(0, 18) + "1" + computedBinary.substring(18, computedBinary.length());
-			System.out.println(computedBinary.substring(2));	
+			System.out.println(">>"+computedBinary.substring(2));	
 			originalInBitSet = fromString(computedBinary.substring(2));
 		}
 		else if(flag_orig_byte==4) {
@@ -103,7 +104,7 @@ public class vbe_1 {
 			originalInBitSet = fromString(computedBinary.substring(3));
 		}
 		
-		System.out.println(originalInBitSet);
+		System.out.println(">>>"+originalInBitSet);
 		writeInFile(originalInBitSet);
 	}
 
@@ -130,7 +131,7 @@ public class vbe_1 {
 	}
 
 	private static void writeInFile(BitSet bs) {
-		File file = new File("data.txt");
+		//File file = new File("data.txt");
 		OutputStream os = null;
 		try {
 			os = new FileOutputStream(new File("d:/input_encoded.txt"));
