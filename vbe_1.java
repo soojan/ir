@@ -43,7 +43,7 @@ public class vbe_1 {
 		{
 			flag_orig_byte=1;
 			System.out.println("---1 byte---");
-			bs.set(7);
+			//bs.set(7);
 			computedBinary = computeBinary(bs);
 			computedBinary = String.format("%0"+ 8 +"d", Integer.parseInt(computedBinary));
 		}
@@ -52,7 +52,7 @@ public class vbe_1 {
 			flag_orig_byte=2;
 			System.out.println("---2 bytes---");			
 			computedBinary = computeBinary(bs);
-			bs.set(7);
+			//bs.set(7);
 			computedBinary = String.format("%0"+ 16 +"d", Integer.parseInt(computedBinary));
 		}
 		else if(bs.length()<23)
@@ -81,7 +81,7 @@ public class vbe_1 {
 		    String paddedString = sb.toString();
 		    computedBinary = paddedString;  
 		}
-		
+		System.out.println(">>>>"+computedBinary);
 		if(flag_orig_byte==1) {
 			System.out.println(computedBinary);	
 		}
